@@ -67,13 +67,13 @@ def login():
         user = User.query.filter_by(username=form.username.data).first()
         if user is None or not user.check_password(form.password.data):
             flash('Invalid username or password')
-            app.logger('Invalid login attempt')
+            app.logger.info('Invalid login attempt')
             return redirect(url_for('login'))
         login_user(user, remember=form.remember_me.data)
         next_page = request.args.get('next')
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('home')
-        app.logger('%s logged in Successfully!' % user)
+        app.logger.info('%s logged in Successfully!' % user)
         return redirect(next_page)
     session["state"] = str(uuid.uuid4())
     auth_url = _build_auth_url(scopes=Config.SCOPE, state=session["state"])
@@ -101,7 +101,7 @@ def authorized():
         # Here, we'll use the admin username for anyone who is authenticated by MS
         user = User.query.filter_by(username="admin").first()
         login_user(user)
-        app.logger.error('%s logged in Successfully!' % user)
+        app.logger.info('%s logged in Successfully!' % user)
         _save_cache(cache)
     return redirect(url_for('home'))
 
