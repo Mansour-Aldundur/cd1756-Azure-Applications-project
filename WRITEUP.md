@@ -10,7 +10,7 @@
 
 ### Assess app changes that would change your decision.
 
-#### I will change it to VM beacuse of : 
+#### Below conditions will change my decision: 
 
 #### If I will need a full control over the underlying operating system and/or install software on the server. With App Service I have a limited access to the host server.
 #### If the app will expand and will require more computing resources beyond the App Service limit of 14GB and 4 vCPU cores.
