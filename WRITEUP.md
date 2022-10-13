@@ -12,8 +12,7 @@
 
 #### I will change it to VM beacuse of : 
 
-##### full control over the operating system to have full control on the system resources to utilize it more to serve the app better. 
-
-#### Migrating to a Development Stack that is not supported by APP service
-
-#### Testing purposes
+#### If I will need a full control over the underlying operating system and/or install software on the server. With App Service I have a limited access to the host server.
+#### If the app will expand and will require more computing resources beyond the App Service limit of 14GB and 4 vCPU cores.
+#### If the app would be in any other non supported language, such as .NET, .NET Core, Java, Ruby, Node.js, PHP, or Python.
+#### If I need to quickly spin up different operating system and application configurations as a VM is a great option for test and development.Because of High Performance Compute Needs.
